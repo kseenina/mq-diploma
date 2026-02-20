@@ -5,7 +5,7 @@
 
 @font-face {
   font-family: OpenSans;
-  src: url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Regular.woff") format("woff");
+  src: url("../fonts/OpenSans-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -13,7 +13,7 @@
 
 @font-face {
   font-family: OpenSans;
-  src: url("https://netology-code.github.io/html-2-diploma/sources/fonts/OpenSans-Bold.woff") format("woff");
+  src: url("../fonts/OpenSans-Bold.woff") format("woff");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -28,7 +28,7 @@ body {
   position: relative;
   width: 100%;
   padding-bottom: 126px;
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/banner-bg.jpg");
+  background-image: url("../images/banner-bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left top;
@@ -302,7 +302,7 @@ body {
 .search-button {
   width: 48px;
   height: 48px;
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/search.svg");
+  background-image: url("../svg/search.svg");
   background-repeat: no-repeat;
   background-size: 18px;
   background-position: center;
@@ -457,21 +457,21 @@ body {
 }
 
 .icon-dribble {
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/001-dribbble.svg");
+  background-image: url("../svg/001-dribbble.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
 }
 
 .icon-pinterest {
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/002-pinterest.svg");
+  background-image: url("../svg/002-pinterest.svg");
   background-repeat: no-repeat;
   background-position: 2px center;
   background-size: 100% 100%;
 }
 
 .icon-tumblr {
-  background-image: url("https://netology-code.github.io/html-2-diploma/sources/images/social/003-tumblr.svg");
+  background-image: url("../svg/003-tumblr.svg");
   background-repeat: no-repeat;
   background-position: 2px center;
   background-size: 100% 100%;
