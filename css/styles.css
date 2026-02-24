@@ -849,9 +849,9 @@ body {
     background-color: #323232;
 }
 
-/* ._hidden {
+._hidden {
     display: none;
-} */
+}
 
 @media(max-width: 640px) and (orientation: landscape) {
     .trends-container {
