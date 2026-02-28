@@ -107,18 +107,6 @@ body {
     margin: 29px auto 0;
 }
 
-.page {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.main-aside {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-}
-
 .trends {
     margin-top: 39px; 
     width: 100%;
@@ -189,8 +177,14 @@ body {
     color: #b59f5b;
 }
 
-.main {
-    width: 330px;
+.news-main-aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.news-main {
     margin: 0 auto;
 }
 
@@ -671,14 +665,22 @@ body {
   width: 1px;
 } 
 
-.popup {
+.popup-container {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.popup-overlay {
     position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+}    
+
+.popup-container:before {
+    position: absolute;
+    content: "";
     top: 0;
     left: 0;
     width: 100%;
@@ -687,25 +689,27 @@ body {
     opacity: 0.6;
 }
 
-.popup-container {
+.popup {
     position: fixed;
-    top: 55px;
+    box-sizing: border-box;
     right: auto;
-    bottom: 0;
     left: auto;
-    width: 332px;
-    height: 546px;
+    top: 0;
+    width: 330px;
     background-color: #ffffff;
+    padding: 25px 27px 30px 24px;
+    margin-top: 55px;
 }
 
 .popup-close {
     position: fixed;
     top: 23px;
-    right: -50px;
+    right: -52px;
     width: 98px;
     height: 98px;
     border: none;
-    background: none;
+    background-color: transparent;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100%25' height='100%25'%3E%3Cpath fill-rule='evenodd' fill='rgb(255,255,255)' d='M27.254,3.609 L16.763,14.101 L27.245,24.584 L24.252,27.577 L13.769,17.095 L3.308,27.557 L0.314,24.563 L10.776,14.102 L0.305,3.631 L3.298,0.637 L13.769,11.108 L24.261,0.616 L27.254,3.609 Z'/%3E%3C/svg%3E");
 }
 
 .popup-title {
@@ -715,7 +719,7 @@ body {
     color: #0f0d0e;
     font-weight: 700;
     font-size: 16px;
-    margin-top: 25px;
+    margin-bottom: 35px;
 }
 
 .popup-title::before {
@@ -727,11 +731,6 @@ body {
     bottom: -13px;
     left: auto;
     transform: translateX(30%);
-}
-
-.popup-form {
-    margin: 35px 24px 0;
-    width: 280px;
 }
 
 .popup-labels {
@@ -930,15 +929,16 @@ body {
         margin-top: 6px;
     }
 
-    .main-aside {
+    .news-main-aside {
         flex-direction: row;
         justify-content: center;
         gap: 36px;
+        max-width: 698px;
+        margin: 0 auto;
     }
 
-    .main {
-        width: 402px;
-        margin: 0 0 0 35px;
+    .news-main {
+        width: 100%;
     }
 
     .news-item {
@@ -958,10 +958,11 @@ body {
     .article-name {
         font-size: 17px;
         line-height: 22px;
+        margin-top: 10px;
     }
 
     .date-author {
-        margin-top: 33px;
+        margin-top: 29px;
     }
 
     .article-text {
@@ -976,7 +977,7 @@ body {
 
     .aside {
         width: 270px;
-        margin: 48px 36px 0 0;
+        margin-top: 48px;
     }
 
     .aside .aside-block-title {
@@ -1000,19 +1001,21 @@ body {
     }
 
     .shop {
-        width: 685px;
+        width: 100%;
+        max-width: 698px;
         margin: 60px auto 0;
     }
 
     .shop-items {
         display: flex;
+        width: 100%;
         flex-wrap: wrap;
-        gap: 25px;
+        justify-content: space-between;
         margin-top: 40px;
     }
 
     .shop-item {
-        width: 330px;
+        width: calc(50% - 12px);
         margin-top: 0;
     }
 
@@ -1020,23 +1023,35 @@ body {
         margin-top: 0;
     }
 
-    .shop-item:nth-child(2n+2) {
-        margin-right: -25px;
+    .shop-item:nth-child(n+3) {
+        margin-top: 30px;
     }
 
     .shop-textblock {
-        height: 180px;
+        min-height: 258px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 50px 22px 26px;
+    }
+
+    .shop-price-button {
+        margin-top: 22px;
     }
 
     .footer {
-        width: 685px;
+        width: 698px;
+        margin: 30px auto 0;
+    } 
+
+    .copyright {
+        margin: 45px auto;
     }
 
-    .popup-container {
-        top: 235px;
+    .popup {
         width: 390px;
-        height: 595px;
-    }    
+        padding: 50px 30px;
+        margin-top: 235px;
+    }
 
     .popup-close {
         top: 200px;
@@ -1047,16 +1062,10 @@ body {
 
     .popup-title {
         font-size: 18px;
-        margin-top: 50px;
     }
 
     .popup-title::before {
         transform: translateX(50%);
-    }
-
-    .popup-form {
-        margin: 34px 28px 0;
-        width: 330px;
     }
 }
 
@@ -1079,6 +1088,10 @@ body {
     
     .trends-article-name {
         width: 100%;
+    }
+
+    .popup {
+        margin-top: 10%;
     }
 }
 
@@ -1147,13 +1160,14 @@ body {
         width: 100%;
     }
 
-    .main-aside {
+    .news-main-aside {
         gap: 122px;
-        margin-top: 11px;
+        margin: 11px auto 0;
+        max-width: 1200px;
     }
 
-    .main {
-        width: 777px;
+    .news-main {
+        margin-left: 15px;
     }
 
     .news-item {
@@ -1184,12 +1198,17 @@ body {
         margin-top: 27px;
     }
 
+    .article-name {
+        margin-top: 5px;
+    }
+
     .article-text {
-        margin-top: 44px;
+        margin-top: 45px;
     }
 
     .aside {
         width: 270px;
+        margin-right: 15px;
     }
 
     .news-aside-container {
@@ -1198,20 +1217,24 @@ body {
 
     .shop {
         margin-top: 65px;
-        width: 1173px;
+        width: 100%;
+        max-width: 1200px;
     }
 
     .shop-items {
+        width: 100%;
         justify-content: space-between;
         gap: 0;
+        box-sizing: border-box;
+        padding: 0 18px 0 15px;
     }
 
     .shop-item {
-        width: 345px;
+        width: calc((100% / 3) - 42px);
     }
 
-    .shop-item:nth-child(2n+2) {
-        margin-right: 0;
+    .shop-item:nth-child(n+3) {
+        margin-top: 0;
     }
 
     .shop-title {
@@ -1221,6 +1244,7 @@ body {
 
     .shop-textblock {
         padding: 50px 18px 30px;
+        min-height: 267px;
     }
 
     .footer {
@@ -1230,11 +1254,11 @@ body {
 
     .copyright {
         margin-top: 70px;
-    }
+    }  
 
-    .popup-container {
-        top: 244px;
-        height: 588px;
+    .popup {
+        margin-top: 245px;
+        padding: 45px 30px 50px;
     }
     
     .popup-close {
@@ -1247,7 +1271,6 @@ body {
 
     .popup-title {
         font-size: 20px;
-        margin-top: 45px;
     }
 
     .radio-label::before {
@@ -1266,5 +1289,9 @@ body {
         margin-top: 8px;
         margin-left: 25px;
         margin-right: 5px;
+    }
+
+    .popup-button {
+        margin-top: 20px;
     }
 }
